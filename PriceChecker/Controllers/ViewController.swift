@@ -9,12 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let conversionView = CurrencyConversionView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        // Do any additional setup after loading the view.
+        setupView()
     }
 
-
+    private func setupView() {
+        view.addSubview(conversionView)
+        NSLayoutConstraint.activate([
+            conversionView.topAnchor.constraint(equalTo: view.topAnchor),
+            conversionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            conversionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            conversionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
 }
 
